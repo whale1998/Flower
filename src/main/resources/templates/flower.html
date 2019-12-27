@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>huayi</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/isotope.css" media="screen"/>
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css" media="screen"/>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/flower.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div th:insert="~{navgation :: copy}"></div>
+
+<div class="jumbotron">
+    <h2>花如你所意</h2>
+</div>
+
+<div class="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-8">
+
+                <!--                详情内容-->
+                <div class="page-header">
+                    <h3 th:text="${nowFlower.fname}"></h3>
+                    <span class="color glyphicon glyphicon-heart" id="fcollection" onclick="changecolor()"></span><br>
+                    <span th:text="${nowFlower.fmean}"></span><br><br>
+                    <h4 th:text="${nowFlower.ftitle}"></h4>
+                    <p th:text="${nowFlower.fcontent}"></p>
+                </div>
+
+                <div align="center">
+
+                        <textarea class="form-control" rows="4" cols="95" name="content" id="comment_content"></textarea><br>
+                        <input type="hidden" th:value="${nowFlower.fid}" name="flowerid" id="flower_id">
+
+                        <input name="button" class="btn btn-default" type="submit" value="留言"
+                               style="margin-top:10px; color: black;" onclick="commentmsg()">
+
+                </div>
+
+            </div>
+
+
+            <div class="recents">
+                <div class="col-xs-6 col-md-4" style=" margin-top:-110px;">
+                    <div class="page-header">
+                        <h4>Recent Post<span class="form-search">
+              </span></h4>
+                    </div>
+                    <div class="recent-post">
+                        <ul class="recent" th:each="commentDTO : ${commentDTOS}">
+                            <li>
+                                <span class="style" th:text="${commentDTO.useranme} + '　:　' + ${commentDTO.content}"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="list-group">
+                        <div class="page-header">
+                            <h4>&nbsp;</h4>
+                        </div>
+                        <BE>
+                            <BE>
+                                <BE>
+                                    <BE>
+                                        <BE>
+                                            <BE>
+                                                <BE>
+                                                    <BE>
+                                                        <BE>
+                                                            <BE>
+                                                                <BE>
+                                                                    <BE>
+                                                                        <BE>
+                                                                            <BE>
+                                                                                <BE>
+                                                                                    <BE>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="jumbotron">
+    <h1>Flower is like your <span>Wishful</span> !</h1>
+    <p>花如你所意</p>
+    <p></p>
+</div>
+
+<footer>
+    <div class="last-div">
+        <div class="container">
+            <div class="row">
+                <div class="copyright">
+                    <div class="credits">
+                        <BR>
+                    </div>
+                </div>
+                <nav class="foot-nav">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">插花</a></li>
+                        <li><a href="#">花意</a>
+                        </li>
+                        <li><a href="#">花类</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <a href="" class="scrollup"><i class="fa fa-chevron-up"></i></a>
+    </div>
+</footer>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/jquery-2.1.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/js/jquery.isotope.min.js"></script>
+<script src="/js/jquery.bxslider.min.js"></script>
+<script src="/js/functions.js"></script>
+<script src="/js/flower.js"></script>
+<script>
+    wow = new WOW({}).init();
+</script>
+
+</body>
+
+</html>

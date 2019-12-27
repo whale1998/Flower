@@ -1,0 +1,17 @@
+.style{
+    color:#333;
+    padding-top:7px;
+    padding-bottom: 7px;
+    padding-left:10px;
+    padding-right:10px;
+    margin-botton:3px;
+    background-color:#EEEEEE
+}
+
+.color{
+    color: gray;
+}
+
+.colorchange{
+    color: #ff7900;
+}

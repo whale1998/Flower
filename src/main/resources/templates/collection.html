@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>usercenter</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen"/>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen"/>
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+<div th:insert="~{navgation :: copy}"></div>
+
+
+<div class="jumbotron">
+    <h2>个人中心</h2>
+</div>
+<div style="width:100%; ">
+    <div style="background-color:lightgrey; width:100%;text-align: center;height: 50px;padding-top: 14px;">
+    <span><a href="/personalInfo" target="right" style="font-size:20px;">个人信息</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/mycollection" target="right" style="font-size:20px;">我的收藏</a></span>
+    </div>
+
+    <table width="60%" border="0" align="center">
+        <div th:each="flower : ${flowers}">
+            <tr>
+                <td width="56%" align="left" valign="middle"><a th:href="@{'/getflower/'+ ${flower.fid}}"
+                                                                style="text-decoration: none;">
+                    <h4 th:text="${flower.fname}"></h4>
+                    <h6>December,15 2019 - Posted by.Steven;</h6>
+                </a></td>
+                <td width="44%" align="right" valign="middle">
+                    <img src="img/quxiao.jpg" width="35px;" th:data-id="${flower.fid}" onclick="deletecol(this);">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left" valign="middle">
+                    <hr align="center" color="#CCCCCC">
+                </td>
+            </tr>
+        </div>
+    </table>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/jquery-2.1.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/js/jquery.isotope.min.js"></script>
+<script src="/js/jquery.bxslider.min.js"></script>
+<script src="/js/functions.js"></script>
+<script src="/js/flower.js"></script>
+<script>
+    wow = new WOW({}).init();
+</script>
+
+<script src="contactform/contactform.js"></script>
+
+</body>
+
+</html>
+

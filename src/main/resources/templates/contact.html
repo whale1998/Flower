@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>denglu</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div th:insert="~{navgation :: copy}"></div>
+
+  <div class="jumbotron">
+    <h2>登录</h2>
+  </div>
+  <div class="contact-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="/userlogin" method="post" role="form" class="contactForm">
+            <div class="form-group">
+              <input type="text" name="email" class="form-control" id="email" placeholder="请输入您的账号"  />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" name="password" id="password" placeholder="请输入您的密码"  />
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn" style="margin-left: -138px; ">登陆</button>
+            </div>
+          </form>
+          <a href="/siginin"><button  class="btn" style="margin-left: 388px;margin-top: -67px;">注册</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <footer>
+    <div class="inner-footer">
+      <div class="container">
+        <div class="row"></div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="js/jquery.isotope.min.js"></script>
+  <script src="js/jquery.bxslider.min.js"></script>
+  <script src="js/functions.js"></script>
+  <script>
+    wow = new WOW({}).init();
+  </script>
+  <script src="contactform/contactform.js"></script>
+
+</body>
+
+</html>
